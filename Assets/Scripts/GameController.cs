@@ -10,13 +10,10 @@ public class GameController : MonoBehaviour
 
     private void Update()
     {
-        if (Utils.SceneCheck(null) == "Lobby")
-        {
-            GameStart();
-        }
+        GameStart();
     }
 
-    public void GameStart()
+    private void GameStart()
     {
         if (Input.anyKey)
         {
@@ -27,6 +24,7 @@ public class GameController : MonoBehaviour
             }
             else
             {
+                Debug.Log("클릭이 감지됨.");
                 Utils.SceneMove("InGame");
                 return;
             }
